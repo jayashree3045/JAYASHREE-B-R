@@ -1,4 +1,5 @@
-FROM python:3.9
-COPY ex4.py . /docker_c/
-WORKDIR /docker_c/
-CMD ["python","ex4.py"]
+FROM gcc:latest
+COPY . /docker_b
+WORKDIR /docker_b
+RUN gcc -o ex3 ex3.c
+CMD ["./ex3"]
